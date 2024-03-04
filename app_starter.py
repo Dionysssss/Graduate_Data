@@ -9,7 +9,10 @@ from flask import Flask, redirect, render_template, request, session, url_for, R
 import os
 import sqlite3 as sl
 import io
+import matplotlib
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
