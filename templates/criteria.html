@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>criteria</title>
+</head>
+<body>
+       <h1>{{criteria}}'s effect in {{ URating }} level of schools {% if project %} (projected) {% endif %} </h1>
+            <img src="{{ url_for('fig', criteria=criteria, URating=URating, project=project) }}" alt="Chance of admit in {{ criteria }}">
+       <form action="/submit_projection" method="POST">
+            <p>Fill each criteria with your value to predict your chance of admission
+    <!--                cri_key = ["GRE Scores (out of 340)","TOEFL Scores (out of 120)","Statement of Purpose (out of 5)","Letter of recommendation (out of 5)" ,"GPA (out of 10)","Research Experience(either 0 or 1)"]
+                        cri_value = ["GRE", "TOEFL", "SOP", "LOR", "CGPA", "Research"]-->
+
+           <table>
+                <tr><td>
+                    <label for="GRE">GRE Scores (out of 340)</label><br>
+                    <input type="text" name="GRE" id="GRE" placeholder="GRE Scores (out of 340)">
+                </td></tr>
+                <tr><td>
+                    <label for="TOEFL">TOEFL Scores (out of 120)</label><br>
+
+                    <input type="text" name="TOEFL" id="TOEFL" placeholder="TOEFL Scores (out of 120)">
+                </td></tr>
+                <tr><td>
+                    <label for="SOP">Statement of Purpose (out of 5)</label><br>
+                     <input type="text" name="SOP" id="SOP" placeholder="Statement of Purpose (out of 5)">
+                </td></tr>
+                <tr><td>
+                    <label for="LOR">Letter of recommendation (out of 5)</label><br>
+                    <input type="text" name="LOR" id="LOR" placeholder="Letter of recommendation (out of 5)">
+                </td></tr>
+                <tr><td>
+                    <label for="CGPA"> GPA (out of 10)</label><br>
+                    <input type="text" name="CGPA" id="CGPA" placeholder="GPA (out of 10)">
+                </td></tr>
+                <tr><td>
+                    <label for="Research">Research Experience(either 0 or 1)</label><br>
+
+                    <input type="text" name="Research" id="Research" placeholder="Research Experience(either 0 or 1)">
+                </td></tr>
+               <tr><td>
+                   <input type="submit" value="Submit"></p>
+               </td></tr>
+            </table>
+        </form>
+
+</body>
+</html>

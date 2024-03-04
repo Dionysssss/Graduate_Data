@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <form action="/submit_criteria" method="POST">
+    Choose a criteria of application:
+    <SELECT name="criteria">
+    {% for k,v in criteria.items() %}
+        {% if v == 'CGPA': %}
+            <OPTION value='{{v}}' selected>{{k}}</option>
+        {% else: %}
+            <OPTION value='{{v}}'>{{k}}</option>
+        {% endif %}
+    {% endfor %}
+    </SELECT>
+
+    <p>Select which undergraduate university rates(level) you would like to visualize:</p>
+    <table border=0>
+        {% for key, value in options.items() %}
+        <tr>
+            <td style="text-align:left"><input type="radio" name="URating" id={{key}} value={{key}} checked>
+                {{value}} </input></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><input type="submit" value="Submit"></p>
+</form>
+</body>
+</html>
